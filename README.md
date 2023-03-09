@@ -5,7 +5,7 @@ This is a collection of personal utility functions for Excel.
 ## How to Use
 
 1. Download the `.bas` with the functions that are needed.
-2. Put file wherever you store add-ins for Excel (default location: `C:\Users\[username]]\AppData\Roaming\Microsoft\AddIns`)
+2. Put file wherever you store add-ins for Excel (default location: `C:\Users\[username]\AppData\Roaming\Microsoft\AddIns`)
 3. In Excel, go to `Options -> Add-ins -> Manage` and then enable to add-in.
 
 ## Public Functions
@@ -42,7 +42,7 @@ This is a collection of personal utility functions for Excel.
 |1|Fruit|Color|JSON|
 |2|Apple|Red|{"Fruit":"Apple","Color":"Red"}
 
-`getUUID() As String` returns a psuedo-random, valid v4 UUID.
+`getUUID() As String` returns a psuedo-random, valid [version 4 UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
 
 ## Private Functions
 

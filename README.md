@@ -5,8 +5,9 @@ This is a collection of personal utility functions for Excel.
 ## How to Use
 
 1. Download the `.bas` with the functions that are needed.
-2. Put file wherever you store add-ins for Excel (default location: `C:\Users\[username]\AppData\Roaming\Microsoft\AddIns`)
-3. In Excel, go to `Options -> Add-ins -> Manage` and then enable to add-in.
+2. Open a blank workbook and import the file in Excel VBA as a module.
+3. Save the workbook as an add-in `.xlam` wherever you store add-ins for Excel (default location: `C:\Users\[username]\AppData\Roaming\Microsoft\AddIns`)
+4. In Excel, go to `Options -> Add-ins -> Manage` and then enable the add-in.
 
 ## Public Functions
 

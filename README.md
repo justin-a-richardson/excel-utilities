@@ -11,11 +11,21 @@ This is a collection of personal utility functions for Excel.
 
 ## Public Functions
 
-`getWorkbookName() As String` returns the full name of the current workbook.
+### Get SQL String
 
-`getSQLString(inputText As String, Optional includeCommas As Boolean = True) As String` returns a string formatted to fit into a SQL query. Specifically, it escapes quotes, adds single quotes around the string, and optionally includes a comma at the end should you have multiple values that need copying (e.g., for a `VALUES` clause).
+`getSQLString(inputText As String, Optional includeCommas As Boolean = True) As String` -> returns a string formatted to fit into a SQL query. Specifically, it escapes quotes, adds single quotes around the string, and optionally includes a comma at the end should you have multiple values that need copying (e.g., for a `VALUES` clause).
 
-`toJSON(ParamArray vals() As Variant) As String` requires you input alternating name and value fields and returns a JSON string. E.g.,
+### Get UUID
+
+`getUUID() As String` -> returns a psuedo-random, valid [version 4 UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+
+### Get Workbook Name
+
+`getWorkbookName() As String` -> returns the full name of the current workbook.
+
+### To JSON
+
+`toJSON(ParamArray vals() As Variant) As String` -> requires you input alternating name and value fields and returns a JSON string. E.g.,
 
 ||A|B|C|
 |---|---|---|---|
@@ -29,7 +39,9 @@ This is a collection of personal utility functions for Excel.
 |1|Fruit|Color|JSON|
 |2|Apple|Red|{"Fruit":"Apple","Color":"Red"}
 
-`toJSONWithHeaders(selectedCells As Range) As String` requires a selection of cells and will use whatever values are in row 1 as the names for the values selected. E.g.,
+### To JSON With Headers
+
+`toJSONWithHeaders(selectedCells As Range) As String` -> requires a selection of cells and will use whatever values are in row 1 as the names for the values selected. E.g.,
 
 ||A|B|C|
 |---|---|---|---|
@@ -43,8 +55,10 @@ This is a collection of personal utility functions for Excel.
 |1|Fruit|Color|JSON|
 |2|Apple|Red|{"Fruit":"Apple","Color":"Red"}
 
-`getUUID() As String` returns a psuedo-random, valid [version 4 UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
+
 
 ## Private Functions
+
+### Get UUID Binary
 
 `getUUIDBinary() As String` is an internal function that supports `getUUID()`. This function iterates over 128 bits to create a binary string to be used as the UUID. It has special case functions that ensure certain bit flags are set to certain values ensuring the generated UUID is a valid version 4 UUID.

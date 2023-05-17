@@ -20,7 +20,7 @@ Public Function toJSON(ParamArray vals() As Variant) As String
     Dim workingString As String: workingString = "{"
     
     'We need to have matching key / value pairs so the parameter needs to have an even number of args
-    If (UBound(vals) + 1) Mod 2 <> 0 And UBound(vals) <> 0 Then Err.Raise vbObjectError + 1, "ExcelUtilities.Functions.getJSON", "This function requires an even number of arguments but an odd number was supplied."
+    If (UBound(vals) + 1) Mod 2 <> 0 And UBound(vals) <> 0 Then Err.Raise vbObjectError + 1, "ExcelUtilities_Functions.getJSON", "This function requires an even number of arguments but an odd number was supplied."
     
     'if the inbound array is two-dimensional it's because another function passed it in as an array
     If UBound(vals) = 0 Then
@@ -90,6 +90,8 @@ Private Function getUUIDBinary() As String
     Dim i As Integer
     Dim binaryString As String: binaryString = ""
     Dim binaryDigit As Integer
+    
+    Randomize
     
     For i = 0 To 127
     
